@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-zphubrox" version="1.0.0">
+   <name>ZPHubrox</name>
+   <js-module name="ZPHubrox" src="www/ZPHubrox.js">
+      <clobbers target="cordova.plugins.ZPHubrox" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="ZPHubrox">
+            <param name="android-package" value="cordova-plugin-zphubrox.ZPHubrox" />
+         </feature>
+      </config-file>
+	  <config-file target="AndroidManifest.xml" parent="/*">
+         <uses-permission android:name="android.permission.BLUETOOTH" />
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+	  <source-file src="src/zp_cpcl_new.jar" target-dir="src"/>
+      <source-file src="src/android/ZPHubrox.java" target-dir="src/cordova-plugin-zphubrox/ZPHubrox" />
+   </platform>
+</plugin>
